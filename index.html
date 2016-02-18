@@ -24,7 +24,7 @@
             def clear(ev):
                 document["out"].html = ''
 
-            document["buttons"].html = '<tr>\n{}\n</tr>'.format('\n'.join(map("<th>{0:1x}_</th>".format, range(16))))
+            document["buttons"].html = '<tr><th></th>\n{}\n</tr>'.format('\n'.join(map("<th>{0:1x}_</th>".format, range(16))))
 
             for i in range(16):
                 r = ''
