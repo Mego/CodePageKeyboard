@@ -19,6 +19,9 @@
             def addtext(ev):
                 document["out"].html += ev.target.html
 
+            def cleat(ev):
+                document["out"].html = ''
+
             for i in range(16):
                 r = ''
                 for j in range(16):
@@ -27,6 +30,9 @@
 
             for btn in document.get(selector='button'):
                 btn.bind('click', addtext)
+
+            document["buttons"].html += '<p><button type="button" class="btn btn-xs btn-default" id="clear">clear</button></p>'
+            document["clear"].bind('click', clear)
         </script>
         <p id="p1"></p>
         <p id="out"></p>
