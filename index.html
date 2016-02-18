@@ -30,7 +30,7 @@
                 for j in range(16):
                     ch = cp437table[i*16+j]
                     ch = "NUL" if ch == "\x00" else "SP" if ch == " " else ch
-                    r += '<td><button type="button" class="btn btn-xs btn-default">{}</button></td>\n'.format(ch)
+                    r += '<td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace">{}</button></td>\n'.format(ch)
                 document["buttons"].html += "<tr>\n<th>_{0:1x}</th>\n{1}</tr>".format(i, r)
 
             for btn in document.get(selector='button'):
