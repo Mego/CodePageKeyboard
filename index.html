@@ -22,7 +22,7 @@
             for i in range(16):
                 r = ''
                 for j in range(16):
-                    r += '<button type="button" class="btn btn-xs btn-default">{}</button>\n'.format("b{}".format(i*16+j), bytes([i*16+j]).decode('cp437'))
+                    r += '<button type="button" class="btn btn-xs btn-default">{}</button>\n'.format(bytes([i*16+j]).decode('cp437'))
                 document["buttons"].html += "<p>{}</p>".format(r)
 
             for btn in document.get(selector='button'):
