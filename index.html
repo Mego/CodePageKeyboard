@@ -23,15 +23,15 @@
             def clear(ev):
                 document["out"].html = ''
 
-            document["buttons"].html = '<tr><th style="padding:10px"></th>\n{}\n</tr>'.format('\n'.join(map('<th style="padding:10px">{0:1x}_</th>'.format, range(16))))
+            document["buttons"].html = '<tr><th style="padding:3px"></th>\n{}\n</tr>'.format('\n'.join(map('<th style="padding:3px">{0:1x}_</th>'.format, range(16))))
 
             for i in range(16):
                 r = ''
                 for j in range(16):
                     ch = cp437table[i*16+j]
                     ch = "NUL" if ch == "\x00" else "SP" if ch == " " else ch
-                    r += '<td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:10px">{}</button></td>\n'.format(ch)
-                document["buttons"].html += '<tr>\n<th style="padding:10px">_{0:1x}</th>\n{1}</tr>'.format(i, r)
+                    r += '<td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px">{}</button></td>\n'.format(ch)
+                document["buttons"].html += '<tr>\n<th style="padding:3px">_{0:1x}</th>\n{1}</tr>'.format(i, r)
 
             for btn in document.get(selector='button'):
                 btn.bind('click', addtext)
@@ -39,9 +39,9 @@
             document["clear"].unbind('click')
             document["clear"].bind('click', clear)
         </script>
-        <h4 style="padding:10px">Output:</h4>
-        <textarea disabled id="out" style="font-family:monospace" style="padding:10px"></textarea>
-        <table border="1" id="buttons" style="padding:10px"></table>
-        <button type="button" class="btn btn-xs btn-default" id="clear" style="padding:10px">clear</button>
+        <h4 style="padding:3px">Output:</h4>
+        <textarea disabled id="out" style="font-family:monospace" style="padding:3px"></textarea>
+        <table border="1" id="buttons" style="padding:3px"></table>
+        <button type="button" class="btn btn-xs btn-default" id="clear" style="padding:3px">clear</button>
     </body>
 </html>
