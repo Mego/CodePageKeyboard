@@ -28,7 +28,9 @@
             for i in range(16):
                 r = ''
                 for j in range(16):
-                    r += '<td><button type="button" class="btn btn-xs btn-default">{}</button></td>\n'.format(cp437table[i*16+j])
+                    ch = cp437table[i*16+j]
+                    ch = "NUL" if ch == "\x00" else "SP" if ch == " " else ch
+                    r += '<td><button type="button" class="btn btn-xs btn-default">{}</button></td>\n'.format(ch)
                 document["buttons"].html += "<tr>\n<th>_{0:1x}</th>\n{1}</tr>".format(i, r)
 
             for btn in document.get(selector='button'):
