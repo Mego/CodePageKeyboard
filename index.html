@@ -35,11 +35,12 @@
             for btn in document.get(selector='button'):
                 btn.bind('click', addtext)
 
-            document["buttons"].html += '<p><button type="button" class="btn btn-xs btn-default" id="clear">clear</button></p>'
+            document["clear"].unbind('click')
             document["clear"].bind('click', clear)
         </script>
         <p id="p1"></p>
         <p id="out"></p>
         <table border="1" id="buttons"></table>
+        <button type="button" class="btn btn-xs btn-default" id="clear">clear</button>
     </body>
 </html>
