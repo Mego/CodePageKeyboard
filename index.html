@@ -24,13 +24,13 @@
             def clear(ev):
                 document["out"].html = ''
 
-            document["buttons"].html = '<table border="1" width="100%"><tr>\n{}\n</tr>'.format('\n'.join(map("<th>{:1x}_</th>".format, range(16))))
+            document["buttons"].html = '<table border="1" width="100%"><tr>\n{}\n</tr>'.format('\n'.join(map("<th>{0:1x}_</th>".format, range(16))))
 
             for i in range(16):
                 r = ''
                 for j in range(16):
                     r += '<td><button type="button" class="btn btn-xs btn-default">{}</button></td>\n'.format(cp437table[i*16+j])
-                document["buttons"].html += "<tr>\n<th>_{:1x}</th>\n{}</tr>".format(i, r)
+                document["buttons"].html += "<tr>\n<th>_{0:1x}</th>\n{1}</tr>".format(i, r)
 
             document["buttons"].html += "</table>"
 
