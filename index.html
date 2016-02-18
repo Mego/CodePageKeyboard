@@ -16,13 +16,17 @@
             from browser import document
             document["p1"].html = "Hello, World!"
 
+            def addtext(button):
+                document["out"].html += button.html
+
             for i in range(16):
                 r = ''
                 for j in range(16):
-                    r += '<button type="button" class="btn btn-xs btn-default">{}</button>\n'.format(bytes([i*16+j]).decode('cp437'))
+                    r += '<button type="button" class="btn btn-xs btn-default" onclick="addtext(this)">{}</button>\n'.format(bytes([i*16+j]).decode('cp437'))
                 document["buttons"].html += "<p>{}</p>".format(r)
         </script>
         <p id="p1"></p>
+        <p id="out"></p>
         <div id="buttons"></div>
     </body>
 </html>
