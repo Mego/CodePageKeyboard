@@ -8,13 +8,12 @@
         <script type="text/javascript"
             src="https://cdn.rawgit.com/brython-dev/brython/3.2.4/www/src/brython.js">
         </script>
+    </head>
+    <body onload="brython()">
         <script type="text/python">
             from browser import document
             document["p1"].html = "Hello, World!"
         </script>
-    </head>
-    <body>
-
         <p id="p1"></p>
     </body>
 </html>
