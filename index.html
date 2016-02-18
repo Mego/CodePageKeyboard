@@ -4,16 +4,25 @@
         <meta charset="utf-8">
         <title>Code Page Keyboard</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript"
-            src="https://cdn.rawgit.com/brython-dev/brython/3.2.4/www/src/brython.js">
-        </script>
+        <script src="https://cdn.rawgit.com/brython-dev/brython/3.2.4/www/src/brython.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <!-- bootstrap stuff -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <body onload="brython()">
         <script type="text/python">
             from browser import document
             document["p1"].html = "Hello, World!"
+
+            for i in range(16):
+                r = ''
+                for j in range(16):
+                    r += '<button type="button" class="btn btn-xs btn-default">{}</button>\n'.format(chr(i*16+j))
+                document["buttons"].html += "<p>{}</p>".format(r)
         </script>
         <p id="p1"></p>
+        <div id="buttons"></div>
     </body>
 </html>
