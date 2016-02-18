@@ -19,7 +19,7 @@
             for i in range(16):
                 r = ''
                 for j in range(16):
-                    r += '<button type="button" class="btn btn-xs btn-default">{}</button>\n'.format(chr(i*16+j))
+                    r += '<button type="button" class="btn btn-xs btn-default">{}</button>\n'.format(chr(i*16+j).decode('cp437'))
                 document["buttons"].html += "<p>{}</p>".format(r)
         </script>
         <p id="p1"></p>
