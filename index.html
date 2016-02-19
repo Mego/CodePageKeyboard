@@ -13,8 +13,13 @@
     </head>
     <body onload="brython()">
         <script type="text/python" src="cpk.py"></script>
+        <h4>Code Page:</h4>
+        <select id="codepage">
+            <option value="ascii" selected>ASCII</option>
+            <option value="cp437">CP437</option>
+        </select>
         <table border="1" id="buttons" style="padding:3px"></table>
-        <h4 style="padding:3px">Output:</h4>
+        <h4>Output:</h4>
         <textarea disabled id="out" style="font-family:monospace" style="padding:3px"></textarea>
         <br>
         <button type="button" class="btn btn-xs btn-default" id="clear" style="padding:3px">clear</button>
