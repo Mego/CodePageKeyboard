@@ -15,21 +15,25 @@ def addtext(ev):
 def clear(ev):
     document["out"].html = ''
 
-document["buttons"].html = '<tr><th style="padding:3px"></th>\n{}\n</tr>'.format('\n'.join(map('<th style="padding:3px">{0:1x}_</th>'.format, range(16))))
+def loadButtons():
+    global codepage
+    document["buttons"].html = '<tr><th style="padding:3px"></th>\n{}\n</tr>'.format('\n'.join(map('<th style="padding:3px">{0:1x}_</th>'.format, range(16))))
 
-for i in range(16):
-    r = ''
-    for j in range(16):
-        if i*16+j >= len(codepage):
-            break
-        ch = codepage[i*16+j]
-        ch = "NUL" if ch == "\x00" else "SP" if ch == " " else ch
-        r += '<td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px">{}</button></td>\n'.format(ch)
-    document["buttons"].html += '<tr>\n<th style="padding:3px">_{0:1x}</th>\n{1}</tr>'.format(i, r)
+    for i in range(16):
+        r = ''
+        for j in range(16):
+            if i*16+j >= len(codepage):
+                break
+            ch = codepage[i*16+j]
+            ch = "NUL" if ch == "\x00" else "SP" if ch == " " else ch
+            r += '<td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px">{}</button></td>\n'.format(ch)
+        document["buttons"].html += '<tr>\n<th style="padding:3px">_{0:1x}</th>\n{1}</tr>'.format(i, r)
 
-for btn in document.get(selector='button'):
-    btn.bind('click', addtext)
+    for btn in document.get(selector='button'):
+        btn.bind('click', addtext)
 
-document["clear"].unbind('click')
-document["clear"].bind('click', clear)
+    document["clear"].unbind('click')
+    document["clear"].bind('click', clear)
+
+loadButtons()
 document["codepage"].bind('change', changePage)
