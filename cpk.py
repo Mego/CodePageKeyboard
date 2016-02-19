@@ -8,6 +8,7 @@ codepage = asciitable
 def changePage(ev):
     global codepage
     codepage = ev.target.value
+    loadButtons()
 
 def addtext(ev):
     document["out"].html += ev.target.html
