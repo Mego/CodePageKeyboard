@@ -13,7 +13,7 @@ codepage = codepages["ascii"]
 def changePage(ev):
     global codepage
     global codepages
-    codepage = codepages[ev.target.value]
+    codepage = codepages[ev.target.value] if ev.target.value in codepages else bytes(range(256)).decode(ev.target.value)
     loadButtons()
 
 def addtext(ev):
