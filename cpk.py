@@ -91,15 +91,7 @@ supported_pages = ["ascii",
  "shift_jis",
  "shift_jis_2004",
  "shift_jisx0213",
- "utf_32",
- "utf_32_be",
- "utf_32_le",
- "utf_16",
- "utf_16_be",
- "utf_16_le",
- "utf_7",
- "utf_8",
- "utf_8_sig"]
+ ]
 
 for enc in supported_pages:
     document["codepage"].html += '<option value="{}"{}>{}</option>'.format(
