@@ -105,7 +105,7 @@ for enc in supported_pages:
     document["codepage"].html += '<option value="{}"{}>{}</option>'.format(
         enc,
         'selected' if enc == 'ascii' else '',
-        enc.upper().replace('_', ' ')
+        enc.upper().replace('_', '-')
     )
 
 codepage = codepages["ascii"]
