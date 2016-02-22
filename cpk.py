@@ -93,9 +93,9 @@ def loadButtons():
                 break
             ch = codepage[i*16+j]
             ch = "NUL" if ch == "\x00" else "SP" if ch == " " else ch
-            r += '<td><button type="button" class="btn btn-xs btn-default"'
-            +' style="font-family:monospace" style="padding:3px">{}</button>'
-            +'</td>\n'.format(ch)
+            r += ('<td><button type="button" class="btn btn-xs btn-default"' +
+                  ' style="font-family:monospace" style="padding:3px">{}' +
+                  '</button></td>\n').format(ch)
         document["buttons"].html += BUTTON_HTML.format(i, r)
 
     for btn in document.get(selector='button'):
