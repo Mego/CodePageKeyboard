@@ -80,9 +80,9 @@ def clear(ev):
 
 def loadButtons():
     global codepage
-    document["buttons"].html =
-    '<tr><th style="padding:3px"></th>\n{}\n</tr>'.format('\n'.join(map(
-     '<th style="padding:3px">_{0:1x}</th>'.format, range(16))))
+    button_html = '<tr><th style="padding:3px"></th>\n{}\n</tr>'
+    document["buttons"].html = button_html.format('\n'.join(map(
+        '<th style="padding:3px">_{0:1x}</th>'.format, range(16))))
 
     for i in range(16):
         r = ''
