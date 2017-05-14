@@ -11,10 +11,10 @@ function load_selections() {
 function load_page() {
     var page = document.getElementById("codepage").value;
     for(var i = 0; i < 256; i++) {
-        if(val in codepages[page]) {
-            var val = codepages[page][i];
-            if(val in unprintable_names) {
-                val = unprintable_names[val];
+        if(val.toString() in codepages[page]) {
+            var val = codepages[page][i.toString()];
+            if(val.toString() in unprintable_names) {
+                val = unprintable_names[val.toString()];
             }
             console.log("Setting value for ord"+i);
             document.getElementById("ord"+i).value = val;
