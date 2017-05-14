@@ -4,29 +4,334 @@
         <meta charset="utf-8">
         <title>Code Page Keyboard</title>
         <meta name="description" content="">
-        <script src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"></script>
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <!-- bootstrap stuff -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="cpk.js" type="text/javascript"></script>
         <style>
 
             body { margin-left: 10px; margin-top: 10 px; }
 
         </style>
     </head>
-    <body onload="brython()">
+    <body onload="load_selections()">
         See the project on <a href="https://github.com/Mego/CodePageKeyboard">GitHub</a>!
         <h4>Code Page:</h4>
         <select id="codepage">
 
         </select>
-        <table border="1" id="buttons" style="padding:3px"></table>
+        <table border="1" id="buttons" style="padding:3px"><tr><th style="padding:3px"></th>
+            <tr><th style="padding:3px"></th>
+            <th style="padding:3px">_0</th>
+            <th style="padding:3px">_1</th>
+            <th style="padding:3px">_2</th>
+            <th style="padding:3px">_3</th>
+            <th style="padding:3px">_4</th>
+            <th style="padding:3px">_5</th>
+            <th style="padding:3px">_6</th>
+            <th style="padding:3px">_7</th>
+            <th style="padding:3px">_8</th>
+            <th style="padding:3px">_9</th>
+            <th style="padding:3px">_a</th>
+            <th style="padding:3px">_b</th>
+            <th style="padding:3px">_c</th>
+            <th style="padding:3px">_d</th>
+            <th style="padding:3px">_e</th>
+            <th style="padding:3px">_f</th>
+            </tr><tr>
+            <th style="padding:3px">0_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord0" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord1" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord2" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord3" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord4" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord5" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord6" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord7" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord8" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord9" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord10" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord11" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord12" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord13" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord14" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord15" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">1_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord16" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord17" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord18" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord19" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord20" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord21" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord22" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord23" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord24" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord25" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord26" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord27" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord28" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord29" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord30" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord31" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">2_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord32" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord33" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord34" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord35" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord36" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord37" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord38" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord39" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord40" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord41" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord42" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord43" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord44" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord45" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord46" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord47" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">3_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord48" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord49" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord50" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord51" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord52" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord53" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord54" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord55" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord56" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord57" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord58" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord59" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord60" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord61" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord62" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord63" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">4_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord64" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord65" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord66" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord67" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord68" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord69" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord70" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord71" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord72" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord73" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord74" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord75" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord76" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord77" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord78" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord79" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">5_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord80" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord81" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord82" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord83" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord84" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord85" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord86" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord87" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord88" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord89" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord90" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord91" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord92" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord93" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord94" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord95" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">6_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord96" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord97" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord98" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord99" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord100" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord101" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord102" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord103" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord104" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord105" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord106" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord107" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord108" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord109" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord110" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord111" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">7_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord112" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord113" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord114" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord115" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord116" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord117" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord118" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord119" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord120" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord121" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord122" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord123" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord124" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord125" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord126" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord127" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">8_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord128" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord129" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord130" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord131" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord132" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord133" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord134" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord135" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord136" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord137" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord138" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord139" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord140" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord141" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord142" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord143" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">9_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord144" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord145" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord146" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord147" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord148" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord149" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord150" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord151" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord152" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord153" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord154" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord155" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord156" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord157" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord158" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord159" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">a_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord160" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord161" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord162" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord163" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord164" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord165" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord166" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord167" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord168" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord169" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord170" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord171" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord172" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord173" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord174" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord175" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">b_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord176" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord177" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord178" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord179" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord180" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord181" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord182" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord183" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord184" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord185" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord186" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord187" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord188" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord189" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord190" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord191" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">c_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord192" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord193" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord194" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord195" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord196" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord197" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord198" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord199" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord200" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord201" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord202" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord203" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord204" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord205" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord206" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord207" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">d_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord208" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord209" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord210" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord211" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord212" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord213" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord214" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord215" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord216" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord217" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord218" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord219" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord220" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord221" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord222" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord223" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">e_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord224" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord225" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord226" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord227" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord228" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord229" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord230" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord231" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord232" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord233" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord234" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord235" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord236" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord237" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord238" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord239" onclick="do_click(this)"></button></td>
+            </tr><tr>
+            <th style="padding:3px">f_</th>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord240" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord241" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord242" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord243" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord244" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord245" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord246" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord247" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord248" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord249" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord250" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord251" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord252" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord253" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord254" onclick="do_click(this)"></button></td>
+            <td><button type="button" class="btn btn-xs btn-default" style="font-family:monospace" style="padding:3px" id="ord255" onclick="do_click(this)"></button></td>
+            </tr>
+        </table>
         <h4>Output:</h4>
         <textarea id="out" style="font-family:monospace"></textarea>
         <br>
-        <button type="button" class="btn btn-xs btn-default" id="clear">clear</button>
-        <script type="text/python" src="cpk.py"></script>
+        <button type="button" class="btn btn-xs btn-default" id="clear" onclick="clear_output()">clear</button>
     </body>
 </html>
