@@ -13,11 +13,14 @@ function load_page() {
     for(var i = 0; i < 256; i++) {
         if(i in codepages[page]) {
             var val = codepages[page][i];
+            var printable_val = val;
             if(val in unprintable_names) {
-                val = unprintable_names[val];
+                printable_val = unprintable_names[val];
             }
             console.log("Setting value for ord"+i);
-            document.getElementById("ord"+i).value = val;
+            var btn = document.getElementById("ord"+i);
+            btn.value = val;
+            btn.innerHTML = printable_val;
         }
     }
 }
