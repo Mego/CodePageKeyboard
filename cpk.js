@@ -16,6 +16,7 @@ function load_page() {
             if(val in unprintable_names) {
                 val = unprintable_names[val];
             }
+            console.log("Setting value for ord"+i);
             document.getElementById("ord"+i).value = val;
         }
     }
