@@ -3,7 +3,7 @@ var codepages = {"cp1251": {"0": "\u0000", "1": "\u0001", "2": "\u0002", "3": "\
 var unprintable_names = {"\u001A": "SUB", "\u0018": "CAN", "\u0004": "EOT", "\u0003": "ETX", "\u0017": "ETB", "\u000D": "CR", "\u0015": "NAK", "\u000A": "LF", "\u000C": "FF", "\u0008": "BS", "\u0019": "EM", "\u0012": "DC2", "\u0013": "DC3", "\u001F": "US", "\u001B": "ESC", "\u0006": "ACK", "\u0011": "DC1", "\u0002": "STX", "\u0010": "DLE", "\u000E": "SO", "\u001D": "GS", "\u0007": "BEL", "\u0000": "NUL", "\u0001": "SOH", "\u0009": "TAB", "\u001E": "RS", "\u0005": "ENQ", "\u0014": "DC4", "\u000F": "SI", "\u0016": "SYN", "\u000B": "VT", "\u001C": "FS", "\u007F": "NBSP"}
 
 function load_selections() {
-    Object.keys(codepages).forEach((page) => document.getElementById("codepage").innerHTML += '<option value="'+page+'">'+page+'</option>';);
+    Object.keys(codepages).forEach(function(page){document.getElementById("codepage").innerHTML += '<option value="'+page+'">'+page+'</option>';});
 }
 
 function load_page(page) {
