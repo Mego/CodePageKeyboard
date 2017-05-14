@@ -4,6 +4,8 @@ var unprintable_names = {"\u001A": "SUB", "\u0018": "CAN", "\u0004": "EOT", "\u0
 
 function load_selections() {
     Object.keys(codepages).forEach(function(page){document.getElementById("codepage").innerHTML += '<option value="'+page+'">'+page+'</option>';});
+    document.getElementById("codepage").value = "ascii";
+    load_page();
 }
 
 function load_page() {
