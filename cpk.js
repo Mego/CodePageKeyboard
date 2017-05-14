@@ -6,7 +6,8 @@ function load_selections() {
     Object.keys(codepages).forEach(function(page){document.getElementById("codepage").innerHTML += '<option value="'+page+'">'+page+'</option>';});
 }
 
-function load_page(page) {
+function load_page() {
+    var page = document.getElementById("codepage").value;
     for(var i = 0; i < 256; i++) {
         if(val in codepages[page]) {
             var val = codepages[page][i];
