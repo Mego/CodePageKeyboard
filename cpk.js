@@ -88,6 +88,8 @@ function load_page() {
             var btn = document.getElementById("ord"+i);
             btn.value = val;
             btn.innerHTML = printable_val;
+        } else {
+            document.getElementById("ord"+i).innerHTML = "";
         }
     }
 }
